@@ -1,12 +1,21 @@
-package tcpWork;
+package operations;
 
-public class MetroCard {
-    private String serNum;
+import tcpWork.User;
+
+public class ShowCardInfoOperation extends CardOperation {
+    private String serNum = null;
     private User usr;
     private String establishment;
     private double balance;
 
-    public MetroCard() {
+    public ShowCardInfoOperation() {
+    }
+
+    public ShowCardInfoOperation(String serNum, User usr, String establishment, double balance) {
+        this.serNum = serNum;
+        this.usr = usr;
+        this.establishment = establishment;
+        this.balance = balance;
     }
 
     public String getSerNum() {
@@ -40,22 +49,4 @@ public class MetroCard {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
-    public MetroCard(String serNum, User usr, String establishment) {
-        this.serNum = serNum;
-        this.usr = usr;
-        this.establishment = establishment;
-        this.balance = 0.0;
-    }
-
-    @Override
-    public String toString() {
-        return "MetroCard{" +
-                "serNum='" + serNum + '\'' +
-                ", usr=" + usr +
-                ", establishment='" + establishment + '\'' +
-                ", balance=" + balance +
-                '}';
-    }
-
 }
