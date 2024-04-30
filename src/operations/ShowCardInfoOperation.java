@@ -3,35 +3,35 @@ package operations;
 import tcpWork.User;
 
 public class ShowCardInfoOperation extends CardOperation {
-    private String serNum = null;
-    private User usr;
+    private String serialNumber = null;
+    private User user;
     private String establishment;
     private double balance;
 
     public ShowCardInfoOperation() {
     }
 
-    public ShowCardInfoOperation(String serNum, User usr, String establishment, double balance) {
-        this.serNum = serNum;
-        this.usr = usr;
+    public ShowCardInfoOperation(String serialNumber, User user, String establishment, double balance) {
+        this.serialNumber = serialNumber;
+        this.user = user;
         this.establishment = establishment;
         this.balance = balance;
     }
 
-    public String getSerNum() {
-        return serNum;
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
-    public void setSerNum(String serNum) {
-        this.serNum = serNum;
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
 
-    public User getUsr() {
-        return usr;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsr(User usr) {
-        this.usr = usr;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getEstablishment() {

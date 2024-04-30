@@ -1,11 +1,16 @@
 package tcpWork;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private static final DateFormat dateFormatter =
             new SimpleDateFormat("dd.MM.yyyy");
     private static final DateFormat dateParser = dateFormatter;
@@ -13,6 +18,9 @@ public class User {
     private String surname;
     private String sex;
     private Date birthday;
+
+    public User() {
+    }
 
     public User(String name, String surName, String sex, String birthday) {
         this.name = name;

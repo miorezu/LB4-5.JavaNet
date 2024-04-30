@@ -1,11 +1,11 @@
 package operations;
 
 public class PayMoneyOperation {
-    private String serNum = null;
-    private double money = 0.0;
+    private String serialNumber;
+    private double money;
 
-    public PayMoneyOperation(String serNum, double money) {
-        this.serNum = serNum;
+    public PayMoneyOperation(String serialNumber, double money) {
+        this.serialNumber = serialNumber;
         this.money = money;
     }
 
@@ -21,11 +21,11 @@ public class PayMoneyOperation {
         this.money = money;
     }
 
-    public String getSerNum() {
-        return serNum;
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
-    public void setSerNum(String serNum) {
-        this.serNum = serNum;
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
 }

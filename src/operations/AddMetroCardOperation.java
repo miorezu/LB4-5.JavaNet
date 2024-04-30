@@ -3,11 +3,13 @@ package operations;
 import tcpWork.MetroCard;
 
 public class AddMetroCardOperation extends CardOperation {
-    private MetroCard crd = null;
+    private MetroCard card;
+
     public AddMetroCardOperation() {
-        crd = new MetroCard();
+        card = new MetroCard();
     }
-    public MetroCard getCrd() {
-        return crd;
+
+    public MetroCard getCard() {
+        return card;
     }
 }

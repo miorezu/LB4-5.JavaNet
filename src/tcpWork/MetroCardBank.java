@@ -1,8 +1,13 @@
 package tcpWork;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MetroCardBank {
+public class MetroCardBank implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     ArrayList<MetroCard> store;
 
     public MetroCardBank() {
@@ -19,7 +24,7 @@ public class MetroCardBank {
 
     public int findMetroCard(String serNum) {
         for (MetroCard card : store) {
-            if (card.getSerNum().equals(serNum)) {
+            if (card.getSerialNumber().equals(serNum)) {
                 return store.indexOf(card);
             }
         }
@@ -61,7 +66,7 @@ public class MetroCardBank {
         if (card != null) {
             return card.getBalance();
         }
-        System.out.println("No card with such serNum");
+        System.out.println("No card with such serial number");
         return -999;
     }
 
@@ -73,4 +78,5 @@ public class MetroCardBank {
         }
         return buf.toString();
     }
+
 }

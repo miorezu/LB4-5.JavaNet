@@ -1,16 +1,20 @@
 package operations;
 
 public class ShowBalanceOperation extends CardOperation {
-    private String serNum = null;
-    public ShowBalanceOperation(String serNum) {
-        this.serNum = serNum;
+    private String serialNumber = null;
+
+    public ShowBalanceOperation(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
+
     public ShowBalanceOperation() {
     }
-    public String getSerNum() {
-        return serNum;
+
+    public String getSerialNumber() {
+        return serialNumber;
     }
-    public void setSerNum(String serNum) {
-        this.serNum = serNum;
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
     }
 }
