@@ -1,7 +1,7 @@
 package operations;
 
-import tcpWork.MetroCard;
-import tcpWork.MetroCardBank;
+import data.MetroCard;
+import data.MetroCardBank;
 
 public class AddMetroCardOperation extends CardOperation {
     private MetroCard card;

@@ -1,6 +1,7 @@
-package tcpWork;
+package main;
 
 import operations.*;
+import data.User;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -70,12 +71,25 @@ public class Client {
         client.applyOperation(new PayMoneyOperation("00001", 1000));
         client.applyOperation(new ShowCardInfoOperation("00001"));
         client.applyOperation(new XMLOperation());
-        client.applyOperation(new RemoveCardOperation("00001"));
 
+        client.finish();
 
-        client.applyOperation(new AddMoneyOperation("00001", 100));
-        client.applyOperation(new ShowBalanceOperation("00001"));
-        client.applyOperation(new ShowCardInfoOperation("00001"));
+        client = new Client("localhost", 7891);
+        operation = new AddMetroCardOperation();
+        operation.getCard().setUser(new User("Erwin", "Smit", "M", "25.09.1999"));
+        operation.getCard().setSerialNumber("00002");
+        operation.getCard().setEstablishment("");
+        operation.getCard().setBalance(20);
+        client.applyOperation(operation);
+
+        client.applyOperation(new AddMoneyOperation("00002", 100));
+        client.applyOperation(new ShowBalanceOperation("00002"));
+        client.applyOperation(new XMLOperation());
+
+        client.applyOperation(new RemoveCardOperation("00002"));
+        client.applyOperation(new AddMoneyOperation("00002", 100));
+        client.applyOperation(new ShowBalanceOperation("00002"));
+        client.applyOperation(new ShowCardInfoOperation("00002"));
 
         client.finish();
     }

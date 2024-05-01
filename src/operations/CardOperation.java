@@ -1,6 +1,6 @@
 package operations;
 
-import tcpWork.MetroCardBank;
+import data.MetroCardBank;
 
 public abstract class CardOperation implements java.io.Serializable {
     public abstract String execute(MetroCardBank cardBank);

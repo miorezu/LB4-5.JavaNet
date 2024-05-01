@@ -1,7 +1,6 @@
 package operations;
 
-import tcpWork.MetroCardBank;
-import tcpWork.User;
+import data.MetroCardBank;
 
 public class ShowCardInfoOperation extends CardOperation {
     private String serialNumber = null;
@@ -24,8 +23,7 @@ public class ShowCardInfoOperation extends CardOperation {
 
     @Override
     public String execute(MetroCardBank cardBank) {
-        if(cardBank.findMetroCard(serialNumber) == -1)
-        {
+        if (cardBank.findMetroCard(serialNumber) == -1) {
             return "Error. No card";
         }
         int index = cardBank.findMetroCard(serialNumber);

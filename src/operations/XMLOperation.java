@@ -3,8 +3,8 @@ package operations;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import tcpWork.MetroCard;
-import tcpWork.MetroCardBank;
+import data.MetroCard;
+import data.MetroCardBank;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

@@ -1,8 +1,8 @@
 package operations;
 
-import tcpWork.MetroCardBank;
+import data.MetroCardBank;
 
-public class PayMoneyOperation extends CardOperation{
+public class PayMoneyOperation extends CardOperation {
     private String serialNumber;
     private double money;
 

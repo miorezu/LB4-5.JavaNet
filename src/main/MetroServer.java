@@ -1,4 +1,6 @@
-package tcpWork;
+package main;
+
+import data.MetroCardBank;
 
 import java.io.IOException;
 import java.net.ServerSocket;

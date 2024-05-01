@@ -3,4 +3,7 @@
     <InfoCard Balance="59.0" Establishment="KhNU" SerialNumber="00001">
         <User Name="Anzhelika" Sex="F" Surname="Mazurenko" birthdayDate="Thu Mar 31 00:00:00 EEST 2005"/>
     </InfoCard>
+    <InfoCard Balance="120.0" Establishment="" SerialNumber="00002">
+        <User Name="Erwin" Sex="M" Surname="Smit" birthdayDate="Sat Sep 25 00:00:00 EEST 1999"/>
+    </InfoCard>
 </CardsList>

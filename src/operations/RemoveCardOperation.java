@@ -1,6 +1,6 @@
 package operations;
 
-import tcpWork.MetroCardBank;
+import data.MetroCardBank;
 
 public class RemoveCardOperation extends CardOperation {
     private String serialNumber = null;

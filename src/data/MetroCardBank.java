@@ -1,4 +1,4 @@
-package tcpWork;
+package data;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -44,11 +44,11 @@ public class MetroCardBank implements Serializable {
     }
 
     public boolean addMoney(String serNum, double money) {
-        if(findMetroCard(serNum) == -1){
+        if (findMetroCard(serNum) == -1) {
             return false;
         }
         MetroCard card = store.get(findMetroCard(serNum));
-        if(card != null && money > 0) {
+        if (card != null && money > 0) {
             card.setBalance(card.getBalance() + money);
             return true;
         }
@@ -56,11 +56,11 @@ public class MetroCardBank implements Serializable {
     }
 
     public boolean payment(String serNum, double money) {
-        if(findMetroCard(serNum) == -1){
+        if (findMetroCard(serNum) == -1) {
             return false;
         }
         MetroCard card = store.get(findMetroCard(serNum));
-        if(card != null && money > 0 && card.getBalance() > money) {
+        if (card != null && money > 0 && card.getBalance() > money) {
             card.setBalance(card.getBalance() - money);
             return true;
         }
@@ -68,7 +68,7 @@ public class MetroCardBank implements Serializable {
     }
 
     public double checkBalance(String serNum) {
-        if(findMetroCard(serNum) == -1){
+        if (findMetroCard(serNum) == -1) {
             System.out.println("No card with such serial number");
             return -999;
         }
