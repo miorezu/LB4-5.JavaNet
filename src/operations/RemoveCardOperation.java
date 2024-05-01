@@ -1,5 +1,7 @@
 package operations;
 
+import tcpWork.MetroCardBank;
+
 public class RemoveCardOperation extends CardOperation {
     private String serialNumber = null;
 
@@ -16,5 +18,13 @@ public class RemoveCardOperation extends CardOperation {
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    @Override
+    public String execute(MetroCardBank cardBank) {
+        if (cardBank.removeCard(serialNumber)) {
+            return "Success. Card with " + serialNumber + " serial number removed successfully";
+        }
+        return "Error";
     }
 }

@@ -1,4 +1,6 @@
 package operations;
 
-public class StopOperation extends CardOperation {
+import java.io.Serializable;
+
+public class StopOperation implements Serializable {
 }

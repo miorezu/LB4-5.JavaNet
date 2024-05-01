@@ -55,16 +55,28 @@ public class Client {
     public static void main(String[] args) {
         Client client = new Client("localhost", 7891);
         AddMetroCardOperation operation = new AddMetroCardOperation();
-        operation.getCard().setUser(new User("Petr", "Petrov", "M", "25.12.1968"));
+        operation.getCard().setUser(new User("Anzhelika", "Mazurenko", "F", "31.03.2005"));
         operation.getCard().setSerialNumber("00001");
         operation.getCard().setEstablishment("KhNU");
-        operation.getCard().setBalance(25);
+        operation.getCard().setBalance(9);
         client.applyOperation(operation);
         client.finish();
 
         client = new Client("localhost", 7891);
         client.applyOperation(new AddMoneyOperation("00001", 100));
         client.applyOperation(new ShowBalanceOperation("00001"));
+        client.applyOperation(new PayMoneyOperation("00001", 50));
+        client.applyOperation(new ShowBalanceOperation("00001"));
+        client.applyOperation(new PayMoneyOperation("00001", 1000));
+        client.applyOperation(new ShowCardInfoOperation("00001"));
+        client.applyOperation(new XMLOperation());
+        client.applyOperation(new RemoveCardOperation("00001"));
+
+
+        client.applyOperation(new AddMoneyOperation("00001", 100));
+        client.applyOperation(new ShowBalanceOperation("00001"));
+        client.applyOperation(new ShowCardInfoOperation("00001"));
+
         client.finish();
     }
 }

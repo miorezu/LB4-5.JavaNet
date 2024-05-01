@@ -8,10 +8,10 @@ public class MetroCardBank implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    ArrayList<MetroCard> store;
+    private ArrayList<MetroCard> store;
 
     public MetroCardBank() {
-        ArrayList<MetroCard> store = new ArrayList<MetroCard>();
+        store = new ArrayList<>();
     }
 
     public ArrayList<MetroCard> getStore() {
@@ -44,8 +44,11 @@ public class MetroCardBank implements Serializable {
     }
 
     public boolean addMoney(String serNum, double money) {
+        if(findMetroCard(serNum) == -1){
+            return false;
+        }
         MetroCard card = store.get(findMetroCard(serNum));
-        if (card != null) {
+        if(card != null && money > 0) {
             card.setBalance(card.getBalance() + money);
             return true;
         }
@@ -53,8 +56,11 @@ public class MetroCardBank implements Serializable {
     }
 
     public boolean payment(String serNum, double money) {
+        if(findMetroCard(serNum) == -1){
+            return false;
+        }
         MetroCard card = store.get(findMetroCard(serNum));
-        if (card != null) {
+        if(card != null && money > 0 && card.getBalance() > money) {
             card.setBalance(card.getBalance() - money);
             return true;
         }
@@ -62,8 +68,12 @@ public class MetroCardBank implements Serializable {
     }
 
     public double checkBalance(String serNum) {
+        if(findMetroCard(serNum) == -1){
+            System.out.println("No card with such serial number");
+            return -999;
+        }
         MetroCard card = store.get(findMetroCard(serNum));
-        if (card != null) {
+        if (card != null && findMetroCard(serNum) != -1) {
             return card.getBalance();
         }
         System.out.println("No card with such serial number");
@@ -78,5 +88,4 @@ public class MetroCardBank implements Serializable {
         }
         return buf.toString();
     }
-
 }

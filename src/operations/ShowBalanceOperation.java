@@ -1,5 +1,7 @@
 package operations;
 
+import tcpWork.MetroCardBank;
+
 public class ShowBalanceOperation extends CardOperation {
     private String serialNumber = null;
 
@@ -16,5 +18,13 @@ public class ShowBalanceOperation extends CardOperation {
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    @Override
+    public String execute(MetroCardBank cardBank) {
+        if (cardBank.checkBalance(serialNumber) != -999) {
+            return "Success. Your Balance: " + cardBank.checkBalance(serialNumber);
+        }
+        return "Error.";
     }
 }

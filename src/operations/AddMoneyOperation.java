@@ -1,5 +1,7 @@
 package operations;
 
+import tcpWork.MetroCardBank;
+
 public class AddMoneyOperation extends CardOperation {
     private String serialNumber;
     private double money;
@@ -27,5 +29,13 @@ public class AddMoneyOperation extends CardOperation {
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    @Override
+    public String execute(MetroCardBank cardBank) {
+        if (cardBank.addMoney(serialNumber, money)) {
+            return "Success. Money added";
+        }
+        return "Error. Money not added";
     }
 }

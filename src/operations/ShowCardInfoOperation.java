@@ -1,21 +1,17 @@
 package operations;
 
+import tcpWork.MetroCardBank;
 import tcpWork.User;
 
 public class ShowCardInfoOperation extends CardOperation {
     private String serialNumber = null;
-    private User user;
-    private String establishment;
-    private double balance;
 
     public ShowCardInfoOperation() {
     }
 
-    public ShowCardInfoOperation(String serialNumber, User user, String establishment, double balance) {
+    public ShowCardInfoOperation(String serialNumber) {
         this.serialNumber = serialNumber;
-        this.user = user;
-        this.establishment = establishment;
-        this.balance = balance;
+
     }
 
     public String getSerialNumber() {
@@ -26,27 +22,13 @@ public class ShowCardInfoOperation extends CardOperation {
         this.serialNumber = serialNumber;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getEstablishment() {
-        return establishment;
-    }
-
-    public void setEstablishment(String establishment) {
-        this.establishment = establishment;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
+    @Override
+    public String execute(MetroCardBank cardBank) {
+        if(cardBank.findMetroCard(serialNumber) == -1)
+        {
+            return "Error. No card";
+        }
+        int index = cardBank.findMetroCard(serialNumber);
+        return cardBank.getStore().get(index).toString();
     }
 }

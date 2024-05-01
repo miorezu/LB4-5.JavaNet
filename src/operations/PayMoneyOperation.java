@@ -1,6 +1,8 @@
 package operations;
 
-public class PayMoneyOperation {
+import tcpWork.MetroCardBank;
+
+public class PayMoneyOperation extends CardOperation{
     private String serialNumber;
     private double money;
 
@@ -27,5 +29,13 @@ public class PayMoneyOperation {
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    @Override
+    public String execute(MetroCardBank cardBank) {
+        if (cardBank.payment(serialNumber, money)) {
+            return "Success. Money payed";
+        }
+        return "Error. Failed to pay";
     }
 }
